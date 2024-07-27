@@ -9,7 +9,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-const uri = "mongodb+srv://kapildave:Atlas$1989@cluster0.msyfucf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://kapildave:Atlas$1989@sample-node.olqvxtj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // MongoDB connection
 mongoose.connect(uri, {
