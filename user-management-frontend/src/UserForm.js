@@ -24,9 +24,9 @@ const UserForm = ({ selectedUser, onSave }) => {
         const userData = { name, email, password };
         try {
             if (selectedUser) {
-                await axios.put(`http://localhost:3000/api/users/${selectedUser._id}`, userData);
+                await axios.put(`${window.location.origin}/api/users/${selectedUser._id}`, userData);
             } else {
-                await axios.post('http://localhost:3000/api/users', userData);
+                await axios.post(`${window.location.origin}/api/users`, userData);
             }
             onSave(); // Call the onSave prop to refresh the user list
         } catch (error) {

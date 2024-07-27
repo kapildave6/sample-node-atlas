@@ -8,7 +8,7 @@ const UserList = ({ onEdit, refreshTrigger }) => {
 
     const fetchUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/users');
+            const response = await axios.get(`${window.location.origin}/api/users`);
             setUsers(response.data);
         } catch (error) {
             console.error('Error fetching users:', error);
@@ -21,7 +21,7 @@ const UserList = ({ onEdit, refreshTrigger }) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/api/users/${id}`);
+            await axios.delete(`${window.location.origin}/api/users/${id}`);
             fetchUsers();
         } catch (error) {
             console.error('Error deleting user:', error);
