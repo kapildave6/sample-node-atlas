@@ -5,6 +5,7 @@ import { Container, Typography } from '@mui/material';
 
 const App = () => {
     const [selectedUser, setSelectedUser] = useState(null);
+    const [refreshTrigger, setRefreshTrigger] = useState(false);
 
     const handleEdit = (user) => {
         setSelectedUser(user);
@@ -12,6 +13,7 @@ const App = () => {
 
     const handleSave = () => {
         setSelectedUser(null);
+        setRefreshTrigger(!refreshTrigger);
     };
 
     return (
@@ -20,7 +22,7 @@ const App = () => {
                 User Management System
             </Typography>
             <UserForm selectedUser={selectedUser} onSave={handleSave} />
-            <UserList onEdit={handleEdit} />
+            <UserList onEdit={handleEdit} refreshTrigger={refreshTrigger} />
         </Container>
     );
 };

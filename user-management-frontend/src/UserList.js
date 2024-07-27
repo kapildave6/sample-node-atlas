@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 
-const UserList = ({ onEdit }) => {
+const UserList = ({ onEdit, refreshTrigger }) => {
     const [users, setUsers] = useState([]);
 
     const fetchUsers = async () => {
@@ -17,7 +17,7 @@ const UserList = ({ onEdit }) => {
 
     useEffect(() => {
         fetchUsers();
-    }, []);
+    }, [refreshTrigger]);
 
     const handleDelete = async (id) => {
         try {
